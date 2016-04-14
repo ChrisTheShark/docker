@@ -1,0 +1,8 @@
+# Ignore pkg
+pkg/
+
+# Ignore Gemfile.lock
+Gemfile.lock
+
+# Ignore checksums
+checksums.json

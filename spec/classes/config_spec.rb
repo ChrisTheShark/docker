@@ -7,11 +7,6 @@ describe 'docker::config' do
       :osfamily => 'RedHat' 
     }
     end
-    let :params do
-    {
-      :dockerrepo => 'docker.repo'
-    }
-    end
     it { is_expected.to contain_file('docker.repo')
       .with_ensure('file')
       .with_path('/etc/yum.repos.d/docker.repo')
@@ -25,11 +20,6 @@ describe 'docker::config' do
       :osfamily               => 'Debian',
       :operatingsystem        => 'Ubuntu',
       :operatingsystemrelease => '12.04'
-    }
-    end
-    let :params do
-    {
-      :dockerrepo => 'docker.repo'
     }
     end
     it { is_expected.to contain_file('docker.repo')
@@ -47,11 +37,6 @@ describe 'docker::config' do
       :operatingsystemrelease => '14.04'
     }
     end
-    let :params do
-    {
-      :dockerrepo => 'docker.repo'
-    }
-    end
     it { is_expected.to contain_file('docker.repo')
       .with_ensure('file')
       .with_path('/etc/apt/sources.list.d/docker.list')
@@ -65,11 +50,6 @@ describe 'docker::config' do
       :osfamily               => 'Debian',
       :operatingsystem        => 'Ubuntu',
       :operatingsystemrelease => '15.10'
-    }
-    end
-    let :params do
-    {
-      :dockerrepo => 'docker.repo'
     }
     end
     it { is_expected.to contain_file('docker.repo')

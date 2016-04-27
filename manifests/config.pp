@@ -8,7 +8,7 @@
 #       to docker.repo.
 class docker::config (
 $dockerrepo = $docker::params::dockerrepo
-) {
+) inherits docker::params {
   if $::osfamily == 'RedHat' {
     $path   = '/etc/yum.repos.d/docker.repo'
     $source = 'puppet:///modules/docker/docker.repo'

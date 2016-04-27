@@ -7,7 +7,7 @@
 #	The package name to install. Defaults to docker-engine.
 class docker::repository (
 $package = $docker::params::package
-) {
+) inherits docker::params {
   if $::osfamily == 'RedHat' {
     exec { 'yum_update':
       command => 'yum update -y',

@@ -11,7 +11,7 @@
 class docker::service (
 $service = $docker::params::service,
 $package = $docker::params::package
-) {
+) inherits docker::params {
   service { $service:
     ensure  => 'running',
     require => Package[$package],

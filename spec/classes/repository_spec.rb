@@ -8,11 +8,6 @@ describe 'docker::repository' do
       :osfamily => 'RedHat' 
     }
     end
-    let :params do
-    {
-      :package => 'docker-engine'
-    }
-    end
     it { is_expected.to contain_exec('yum_update')
       .with_command('yum update -y')
       .with_path('/usr/bin')
@@ -27,11 +22,6 @@ describe 'docker::repository' do
       :osfamily               => 'Debian',
       :operatingsystem        => 'Ubuntu',
       :operatingsystemrelease => '12.04'
-    }
-    end
-    let :params do
-    {
-      :package => 'docker-engine'
     }
     end
     it { is_expected.to contain_exec('addDockerKey')
@@ -57,11 +47,6 @@ describe 'docker::repository' do
       :operatingsystemrelease => '14.04'    
     }
     end
-    let :params do
-    {
-      :package => 'docker-engine'
-    }
-    end
     it { is_expected.to contain_exec('addDockerKey')
       .with_command('apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D')
       .with_path('/bin/:/usr/bin/')
@@ -83,11 +68,6 @@ describe 'docker::repository' do
       :osfamily               => 'Debian',
       :operatingsystem        => 'Ubuntu',
       :operatingsystemrelease => '15.10'
-    }
-    end
-    let :params do
-    {
-      :package => 'docker-engine'
     }
     end
     it { is_expected.to contain_exec('addDockerKey')

@@ -12,7 +12,7 @@
 class docker::install (
 $package = $docker::params::package,
 $dockerrepo = $docker::params::dockerrepo
-) {
+) inherits docker::params {
   package { $package:
     ensure  => 'latest',
     require => File[$dockerrepo],

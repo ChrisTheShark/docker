@@ -12,23 +12,9 @@
 #
 # [*service*]
 #	The service name to start. Defaults to docker.
-class docker(
-  $dockerrepo = $docker::params::dockerrepo,
-  $package = $docker::params::package,
-  $service = $docker::params::service
-) inherits docker::params {
-  class { 'docker::config':
-    dockerrepo => $dockerrepo,
-  }
-  class { 'docker::repository':
-    package => $package,
-  }
-  class { 'docker::install':
-    package    => $package,
-    dockerrepo => $dockerrepo,
-  }
-  class { 'docker::service':
-    service => $service,
-    package => $package,
-  }
+class docker {
+  include docker::config
+  include docker::repository
+  include docker::install
+  include docker::service
 }

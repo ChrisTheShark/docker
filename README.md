@@ -22,13 +22,17 @@ To install the latest docker in the default location and start the service:
 
 include docker
 
+To install a particular version of docker:
+
+class { 'docker':
+  version => '1.9.1',
+}
+
 ## Limitations
 
 This module has received limited testing on:
 
 * CentOS/RHEL 6/7
 * Ubuntu 14.04/15.10
-
-This module does not currently start docker containers.
 
 This module does not currently add users to the docker group.

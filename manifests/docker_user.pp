@@ -5,13 +5,13 @@
 define docker::docker_user {
   include docker::params
   user { $title:
-    ensure => 'present',
-    before => Exec['add_group'],
+    ensure     => 'present',
+    managehome => 'true',
+    before     => Exec['add_group'],
   }
   exec { 'add_group':
     command => "usermod -aG docker ${title}",
-    unless  => "/bin/cat /etc/group | grep '^docker:' | grep -qw ${title}",
-    require => Service[$docker::params::service],
+    require => Package[$docker::params::package],
     path    => '/usr/sbin:/usr/bin',
   }
 }

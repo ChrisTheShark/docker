@@ -8,7 +8,7 @@
 #
 class docker (
 $version = $docker::params::version
-) {
+) inherits docker::params {
   include docker::config
   include docker::repository
   class { 'docker::install':

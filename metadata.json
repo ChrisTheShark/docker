@@ -1,6 +1,6 @@
 {
   "name": "ChrisTheShark-docker",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "ChrisTheShark",
   "summary": "Puppet module to install Docker on Centos or Ubuntu Linux flavors.",
   "license": "Apache-2.0",

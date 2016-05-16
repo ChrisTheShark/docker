@@ -28,11 +28,14 @@ class { 'docker':
   version => '1.9.1',
 }
 
+To install latest docker and a docker system user:
+
+include docker
+docker::docker_user { 'user_name': }
+
 ## Limitations
 
 This module has received limited testing on:
 
 * CentOS/RHEL 6/7
 * Ubuntu 14.04/15.10
-
-This module does not currently add users to the docker group.

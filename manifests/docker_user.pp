@@ -6,7 +6,7 @@ define docker::docker_user {
   include docker::params
   user { $title:
     ensure     => 'present',
-    managehome => 'true',
+    managehome => true,
     before     => Exec['add_group'],
   }
   exec { 'add_group':
